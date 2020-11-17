@@ -71,10 +71,9 @@ def turn(board)
     display_board(board)
     if !over?(board)
       turn(board)
-      end
-  else
+    else
     play(board)
-
+    end
   end
 end
 #  asks for input again after a failed validation (FAILED - 1)
