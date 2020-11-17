@@ -34,11 +34,6 @@ def valid_move?(board, index)
 end
 
 ##NOV 16 ERRORS
-    # checks if the game is over after every turn (FAILED - 1)
-#               Failure/Error: expect(self).to receive(:over?).at_least(:twice).and_return(false, false, true)
-#            expected: at least 3 times with any arguments
-#            received: 1 time with any arguments
-     # ./spec/02_play_spec.rb:20:in `block (3 levels) in <top (required)>'
     # plays the first few turns of the game (FAILED - 2)
     # checks if the game is won after every turn (FAILED - 3)
     # checks if the game is draw after every turn (FAILED - 4)
@@ -75,7 +70,7 @@ def turn(board)
     move(board, index, current_player(board))
     display_board(board)
   elsif !over?(board)
-    turn(board)
+    play(board)
   end
 end
 #  asks for input again after a failed validation (FAILED - 1)
