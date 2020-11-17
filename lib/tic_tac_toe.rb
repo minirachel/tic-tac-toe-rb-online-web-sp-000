@@ -33,17 +33,6 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
-##NOV 16 ERRORS
-    # checks if the game is over after every turn (FAILED - 1)
-#               Failure/Error: expect(self).to receive(:over?).at_least(:twice).and_return(false, false, true)
-#            expected: at least 3 times with any arguments
-#            received: 1 time with any arguments
-     # ./spec/02_play_spec.rb:20:in `block (3 levels) in <top (required)>'
-    # plays the first few turns of the game (FAILED - 2)
-    # checks if the game is won after every turn (FAILED - 3)
-    # checks if the game is draw after every turn (FAILED - 4)
-    # plays through an entire game (FAILED - 5)
-##I think I need to reformat so it is in a TRUE format - until?
 def play(board)
   if !over?(board)
     turn(board)
@@ -74,10 +63,17 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index, current_player(board))
     display_board(board)
-  elsif !over?(board)
+    play(board)
+  elsif
     turn(board)
   end
 end
+
+  # elsif !valid_move?(board, index) && !over?(board)
+  #   puts "invalid"
+  #   turn(board)
+  # elsif over?(board)
+  #   play(board)
 #  asks for input again after a failed validation (FAILED - 1)
 
 def won?(board)
@@ -100,6 +96,6 @@ def winner(board)
   if won?(board)
     board[won?(board)[0]]
   else
-    puts "no winner!"
+    puts "No Winner!"
   end
 end
