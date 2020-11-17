@@ -74,7 +74,7 @@ def turn(board)
       end
   else
     play(board)
-    
+
   end
 end
 #  asks for input again after a failed validation (FAILED - 1)
