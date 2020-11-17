@@ -71,7 +71,7 @@ def turn(board)
     display_board(board)
     play(board)
   else !valid_move?(board,index)
-    turn(board)
+    play(board)
   end
 end
 #  asks for input again after a failed validation (FAILED - 1)
