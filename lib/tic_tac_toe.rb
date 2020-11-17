@@ -69,8 +69,10 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index, current_player(board))
     display_board(board)
-  elsif !over?(board)
-    play(board)
+    if !over?(board)
+      turn(board)
+    else
+      play(board)
   end
 end
 #  asks for input again after a failed validation (FAILED - 1)
