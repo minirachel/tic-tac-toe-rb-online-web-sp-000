@@ -71,8 +71,6 @@ def turn(board)
     display_board(board)
     if !over?(board)
       turn(board)
-    else
-    play(board)
     end
   end
 end
