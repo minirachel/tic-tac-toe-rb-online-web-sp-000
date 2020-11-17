@@ -70,7 +70,7 @@ def turn(board)
     move(board, index, current_player(board))
     display_board(board)
     play(board)
-  elsif !valid_move(board,index)
+  elsif !valid_move?(board,index)
     turn(board)
   end
 end
